@@ -15,87 +15,61 @@
     <h1>Bat Ball Stump Game</h1>
     <button
       onclick="
-        //this will genrate a random number between 0 to 3
-        let randomNumber = Math.random() * 3;
-        let computerChoice;
-        if (randomNumber > 0 && randomNumber <= 1) {
-          computerChoice = 'Bat';
-        } else if (randomNumber > 1 && randomNumber <= 2) {
-          computerChoice = 'Ball';
-        } else {
-          computerChoice = 'Stump';
-        }
-
+        genrateComputerChoice();
         let result;
         if (computerChoice === 'Ball') {
-         result ='User won';
-        }else if(computerChoice === 'Bat')
-        {
-            result = `It's a tie`;
-        }
-        else if(computerChoice === 'Stump')
-        {
-            result =`Computer has won`;
-
+          result = 'User won';
+        } else if (computerChoice === 'Bat') {
+          result = `It's a tie`;
+        } else if (computerChoice === 'Stump') {
+          result = `Computer has won`;
         }
 
-        alert(`You have chosen Bat. Computer choice is ${computerChoice} and ${result}`);
-      ">Bat
+        alert(
+          `You have chosen Bat. Computer choice is ${computerChoice} and ${result}`,
+        );
+      "
+    >
+      Bat
     </button>
 
     <button
-    onclick="
-        //this will genrate a random number between 0 to 3
-        randomNumber = Math.random() * 3;
-        if (randomNumber > 0 && randomNumber <= 1) {
-          computerChoice = 'Bat';
-        } else if (randomNumber > 1 && randomNumber <= 2) {
-          computerChoice = 'Ball';
-        } else {
-          computerChoice = 'Stump';
-        }
-        
+      onclick="
+        genrateComputerChoice();
         if (computerChoice === 'Ball') {
-            result = `It's a tie`;
-        }else if(computerChoice === 'Bat')
-        {
-            result =`Computer has won`;
-        }
-        else if(computerChoice === 'Stump')
-        {
-            result ='User won';
-
+          result = `It's a tie`;
+        } else if (computerChoice === 'Bat') {
+          result = `Computer has won`;
+        } else if (computerChoice === 'Stump') {
+          result = 'User won';
         }
 
-        alert(`You have chosen Ball. Computer choice is ${computerChoice} and ${result}`);
-    ">Ball</button>
+        alert(
+          `You have chosen Ball. Computer choice is ${computerChoice} and ${result}`,
+        );
+      "
+    >
+      Ball
+    </button>
 
     <button
-        onclick="
-        //this will genrate a random number between 0 to 3
-        randomNumber = Math.random() * 3;
-        if (randomNumber > 0 && randomNumber <= 1) {
-          computerChoice = 'Bat';
-        } else if (randomNumber > 1 && randomNumber <= 2) {
-          computerChoice = 'Ball';
-        } else {
-          computerChoice = 'Stump';
-        }
-        
+      onclick="
+        genrateComputerChoice();
         if (computerChoice === 'Ball') {
-            result =`Computer has won`;
-        }else if(computerChoice === 'Bat')
-        {
-            result ='User won';
-        }
-        else if(computerChoice === 'Stump')
-        {
-            result = `It's a tie`;
-
+          result = `Computer has won`;
+        } else if (computerChoice === 'Bat') {
+          result = 'User won';
+        } else if (computerChoice === 'Stump') {
+          result = `It's a tie`;
         }
 
-        alert(`You have chosen Stump. Computer choice is ${computerChoice} and ${result}`);
-    ">Stump</button>
+        alert(
+          `You have chosen Stump. Computer choice is ${computerChoice} and ${result}`,
+        );
+      "
+    >
+      Stump
+    </button>
 
     <!-- <script src="script.js"></script> -->
   </body>
