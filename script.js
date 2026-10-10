@@ -1,13 +1,45 @@
-let computerChoice;
-function genrateComputerChoice()
-{
-         //this will genrate a random number between 0 to 3
-        randomNumber = Math.random() * 3;
-        if (randomNumber > 0 && randomNumber <= 1) {
-          computerChoice = 'Bat';
-        } else if (randomNumber > 1 && randomNumber <= 2) {
-          computerChoice = 'Ball';
-        } else {
-          computerChoice = 'Stump';
-        }
+function genrateComputerChoice() {
+  //this will genrate a random number between 0 to 3
+  randomNumber = Math.random() * 3;
+  if (randomNumber > 0 && randomNumber <= 1) {
+    return "Bat";
+  } else if (randomNumber > 1 && randomNumber <= 2) {
+    return "Ball";
+  } else {
+    return "Stump";
+  }
+}
+
+function getresult(userMove, computerMove) {
+  if (userMove == "Bat") {
+    if (computerMove === "Ball") {
+      return "User won";
+    } else if (computerMove === "Bat") {
+      return `It's a tie`;
+    } else if (computerMove === "Stump") {
+      return `Computer has won`;
+    }
+  } else if (userMove === "Ball") {
+    if (computerMove === "Ball") {
+      return `It's a tie`;
+    } else if (computerMove === "Bat") {
+      return `Computer has won`;
+    } else if (computerMove === "Stump") {
+      return "User won";
+    }
+  } else {
+    if (computerMove === "Ball") {
+      return `Computer has won`;
+    } else if (computerMove === "Bat") {
+      return "User won";
+    } else if (computerMove === "Stump") {
+      return `It's a tie`;
+    }
+  }
+}
+
+function printres(computerChoice , result) {
+  alert(
+    `You have chosen Stump. Computer choice is ${computerChoice} and ${result}`,
+  );
 }
