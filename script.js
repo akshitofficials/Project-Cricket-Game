@@ -1,3 +1,8 @@
+let score = {
+  win: 0,
+  lost: 0,
+  tie: 0,
+};
 function genrateComputerChoice() {
   //this will genrate a random number between 0 to 3
   randomNumber = Math.random() * 3;
@@ -13,33 +18,46 @@ function genrateComputerChoice() {
 function getresult(userMove, computerMove) {
   if (userMove == "Bat") {
     if (computerMove === "Ball") {
+      score.win++;
       return "User won";
     } else if (computerMove === "Bat") {
+      score.tie++;
       return `It's a tie`;
     } else if (computerMove === "Stump") {
+      score.lost++;
       return `Computer has won`;
     }
   } else if (userMove === "Ball") {
     if (computerMove === "Ball") {
+      score.tie++;
       return `It's a tie`;
     } else if (computerMove === "Bat") {
+      score.lost++;
       return `Computer has won`;
     } else if (computerMove === "Stump") {
+      score.win++;
       return "User won";
     }
   } else {
     if (computerMove === "Ball") {
+      score.lost++;
       return `Computer has won`;
     } else if (computerMove === "Bat") {
+      score.win++;
       return "User won";
     } else if (computerMove === "Stump") {
+      score.tie++;
       return `It's a tie`;
     }
   }
 }
 
-function printres(computerChoice , result) {
+function printres(computerChoice, result) {
+  console.log(score);
   alert(
-    `You have chosen Stump. Computer choice is ${computerChoice} and ${result}`,
-  );
+    `You have chosen Stump and Computer chosen ${computerChoice}
+    
+    Result : ${result}
+    
+    Won : ${score.win}, Lost: ${score.lost}, Tie : ${score.tie}`);
 }
