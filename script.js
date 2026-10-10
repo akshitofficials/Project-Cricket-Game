@@ -2,6 +2,9 @@ let score = {
   win: 0,
   lost: 0,
   tie: 0,
+  displayScore: function() {
+    return `Won: ${score.win} , Lost: ${score.lost} , Tie : ${score.tie}`;
+  }
 };
 function genrateComputerChoice() {
   //this will genrate a random number between 0 to 3
@@ -58,6 +61,6 @@ function printres(computerChoice, result) {
     `You have chosen Stump and Computer chosen ${computerChoice}
     
     Result : ${result}
-    
-    Won : ${score.win}, Lost: ${score.lost}, Tie : ${score.tie}`);
+    ${score.displayScore()}
+    `);
 }
