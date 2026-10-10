@@ -1,14 +1,27 @@
-let score = {
-  win: 0,
-  lost: 0,
-  tie: 0,
-  displayScore: function() {
-    return `Won: ${score.win} , Lost: ${score.lost} , Tie : ${score.tie}`;
-  }
-};
+let scoreStr = localStorage.getItem('Score');
+let score;
+resetScore(scoreStr);
+function resetScore(scoreStr){
+  score = scoreStr?JSON.parse(scoreStr) : {
+      win: 0,
+      lost: 0,
+      tie: 0,
+    };
+    score.displayScore = function() {
+    return `Won: ${score.win} , Lost: ${score.lost} , Tie : ${score.tie}`};
+}
+// if (scoreStr!==null) {
+//   score = JSON.parse(scoreStr);
+// } else { 
+//   score = {
+//     win: 0,
+//     lost: 0,
+//     tie: 0,
+//   };
+// }
 function genrateComputerChoice() {
   //this will genrate a random number between 0 to 3
-  randomNumber = Math.random() * 3;
+  let randomNumber = Math.random() * 3;
   if (randomNumber > 0 && randomNumber <= 1) {
     return "Bat";
   } else if (randomNumber > 1 && randomNumber <= 2) {
@@ -56,7 +69,7 @@ function getresult(userMove, computerMove) {
 }
 
 function printres(computerChoice, result) {
-  console.log(score);
+  localStorage.setItem('Score' , JSON.stringify(score));
   alert(
     `You have chosen Stump and Computer chosen ${computerChoice}
     
