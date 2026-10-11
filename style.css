@@ -1,3 +1,120 @@
-body{
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     text-align: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #dcedc8);
+    padding: 40px 15px;
+}
+
+h1 {
+    font-size: 38px;
+    color: #1b4332;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.choice-button {
+    height: 120px;
+    width: 120px;
+    border: 3px solid white;
+    margin: 10px;
+    background: linear-gradient(135deg, #a4d482, #74c69d);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.choice-button:hover {
+    transform: translateY(-8px) scale(1.08);
+    background: #95d5b2;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.choice-button:active {
+    transform: scale(0.95);
+}
+
+.choice-image {
+    height: 80px;
+    max-width: 85%;
+    object-fit: contain;
+}
+
+#user-move,
+#computer-move {
+    font-size: 19px;
+    color: #344e41;
+    margin: 12px;
+}
+
+#result {
+    font-size: 25px;
+    color: #1b4332;
+    margin: 15px;
+}
+
+#score {
+    max-width: 450px;
+    margin: 25px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    color: #1b4332;
+    font-size: 21px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+}
+
+.reset-button {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    height: 48px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff6b6b, #e63946);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(230,57,70,0.25);
+    transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+    background: #c1121f;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(230,57,70,0.4);
+}
+
+.reset-button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .choice-button {
+        width: 90px;
+        height: 90px;
+        margin: 5px;
+    }
+
+    .choice-image {
+        height: 60px;
+    }
+
+    #score {
+        font-size: 17px;
+    }
 }

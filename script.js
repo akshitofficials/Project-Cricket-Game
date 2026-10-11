@@ -1,6 +1,7 @@
 let scoreStr = localStorage.getItem('Score');
 let score;
 resetScore(scoreStr);
+document.querySelector('#score').innerText = score.displayScore();
 function resetScore(scoreStr){
   score = scoreStr?JSON.parse(scoreStr) : {
       win: 0,
@@ -8,7 +9,7 @@ function resetScore(scoreStr){
       tie: 0,
     };
     score.displayScore = function() {
-    return `Won: ${score.win} , Lost: ${score.lost} , Tie : ${score.tie}`};
+    return `Score: Won: ${score.win} , Lost: ${score.lost} , Tie : ${score.tie}`};
 }
 // if (scoreStr!==null) {
 //   score = JSON.parse(scoreStr);
@@ -68,12 +69,19 @@ function getresult(userMove, computerMove) {
   }
 }
 
-function printres(computerChoice, result) {
+function printres(userMove ,computerChoice, result) {
   localStorage.setItem('Score' , JSON.stringify(score));
-  alert(
-    `You have chosen Stump and Computer chosen ${computerChoice}
-    
-    Result : ${result}
-    ${score.displayScore()}
-    `);
+  document.querySelector('#user-move').innerText = userMove?`You have chosen ${userMove}`:'';
+  document.querySelector('#computer-move').innerText = computerChoice?`Computer chosen ${computerChoice}`:'';
+  document.querySelector('#result').innerText = result || '';
+  document.querySelector('#score').innerText = score.displayScore();
 }
+
+// before reset score display
+// function printres(userMove ,computerChoice, result) {
+//   localStorage.setItem('Score' , JSON.stringify(score));
+//   document.querySelector('#user-move').innerText = `You have chosen ${userMove}`;
+//   document.querySelector('#computer-move').innerText = `Computer chosen ${computerChoice}`;
+//   document.querySelector('#result').innerText = result;
+//   document.querySelector('#score').innerText = score.displayScore();
+// }
